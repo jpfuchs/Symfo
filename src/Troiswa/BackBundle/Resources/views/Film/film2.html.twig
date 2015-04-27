@@ -1,0 +1,111 @@
+
+{% extends  "TroiswaBackBundle::layout.html.twig" %}
+
+{% block css %}
+{{ parent() }}
+{% endblock %}
+
+{% block titre %} acteur {{ parent() }}
+{% endblock %}
+
+
+{% block central %}
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Tous les films
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <a href="{{ path('troiswa_back_film') }}"><i class="fa fa-fw fa-dashboard"></i> Films</a>
+                            <i class="fa fa-table"></i> UnFilm
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+
+
+
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-hover">
+
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Titre</th>
+                                <th>Description</th>
+                                <th>Image</th>
+
+                                <th>Date</th>
+                                <th>note</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+
+
+
+
+
+                                <tr>
+                                <td> {{ films.id }} </td>
+                                <td> {{ films.Titre}} </td>
+                                <td> {{ films.Description }} </td>
+                                    <td> <img src=" {{ asset("images/") }}{{ films.image }}" width="'200px" class="img-thumbnail"> </td>
+
+
+                                    <td> {{ films.dateDeRealisation  | date("m/d/Y") }} </td>
+                                    <td> {{ films.note }} </td>
+
+                                    <td>
+                                     <a class="btn btn-success" href="" >Voir</a>
+                                     <a class="btn btn-primary" href="" >Modifier</a>
+                                     <a class="btn btn-danger" href="" >Supprimer</a>
+                                 </td>
+
+
+                                </tr>
+
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+{% endblock %}
+
+
+
+    {% block javascript %}
+    {{ parent() }}
+
+
+    {% endblock %}

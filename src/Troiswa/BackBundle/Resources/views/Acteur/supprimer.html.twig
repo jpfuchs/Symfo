@@ -1,0 +1,71 @@
+
+{% extends  "TroiswaBackBundle::layout.html.twig" %}
+
+{% block css %}
+{{ parent() }}
+{% endblock %}
+
+{% block titre %} acteur {{ parent() }}
+{% endblock %}
+
+
+{% block central %}
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="{{ path("troiswa_back_admin")  }}">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-table"></i> Acteurs
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            {# form(formActeurs) #}
+
+            {%  for message in app.session.flashbag.get("sucess_acteur") %}
+
+                <p class="alert alert-success">{{ message }}</p>
+
+            {% endfor %}
+
+
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+
+
+                    </div>
+                </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+{% endblock %}
+
+
+
+    {% block javascript %}
+    {{ parent() }}
+
+
+    {% endblock %}

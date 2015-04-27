@@ -1,0 +1,94 @@
+troiswa_back_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TroiswaBackBundle:Default:index }
+
+troiswa_back_test: #nom unique de la route
+    path:   /essai  #url de la page
+    defaults: {_controller: TroiswaBackBundle:Default:try  }
+    #chemin vers le controller et sa methode
+
+troiswa_back_admin: #nom unique de la route
+    path:   /admin  #url de la page
+    defaults: {_controller: TroiswaBackBundle:Main:dashBoard  }
+    #chemin vers le controller et sa methode
+
+troiswa_back_acteur: #nom unique de la route
+        path:   /admin/acteur  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Acteur:index  }
+        #chemin vers le controller et sa methode
+
+troiswa_back_create_acteur: #nom unique de la route
+        path:   /admin/acteur/creation  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Acteur:creer  }
+
+troiswa_back_info_acteur: #nom unique de la route
+                path:   /admin/acteur/{id}  #url de la page
+                defaults: {_controller: TroiswaBackBundle:Acteur:information  }
+                requirements:
+                     id: \d+
+                #chemin vers le controller et sa methode
+
+troiswa_back_modifier_acteur: #nom unique de la route
+        path:   /admin/acteur/modifier/{id}  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Acteur:modifier  }
+        #chemin vers le controller et sa methode
+
+
+troiswa_back_supprimer_acteur: #nom unique de la route
+        path:   /admin/acteur/supprimer/{id}  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Acteur:supprimer  }
+        #chemin vers le controller et sa methode
+
+
+troiswa_back_film: #nom unique de la route
+          path:   /admin/film  #url de la page
+          defaults: {_controller: TroiswaBackBundle:Film:index  }
+          #chemin vers le controller et sa methode
+
+troiswa_back_info_film: #nom unique de la route
+                path:   /admin/film/{id}  #url de la page
+                defaults: {_controller: TroiswaBackBundle:Film:information  }
+                requirements:
+                     id: \d+
+                  #chemin vers le controller et sa methode
+
+troiswa_back_create_film: #nom unique de la route
+        path:   /admin/film/creation  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Film:creer  }
+
+troiswa_back_modifier_film: #nom unique de la route
+        path:   /admin/film/modifier/{id}  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Film:modifier  }
+        #chemin vers le controller et sa methode
+
+
+troiswa_back_genre: #nom unique de la route
+        path:   /admin/genre  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Genre:all  }
+        #chemin vers le controller et sa methode
+
+
+
+troiswa_back_create_genre: #nom unique de la route
+        path:   /admin/genre/creation  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Genre:creer  }
+        #chemin vers le controller et sa methode
+
+troiswa_back_modifier_genre: #nom unique de la route
+        path:   /admin/genre/modifier/{id}  #url de la page
+        defaults: {_controller: TroiswaBackBundle:Genre:modifier  }
+        #chemin vers le controller et sa methode
+
+
+
+troiswa_back_info_genre: #nom unique de la route
+                path:   /admin/genre/{id}  #url de la page
+                defaults: {_controller: TroiswaBackBundle:Genre:information  }
+                #chemin vers le controller et sa methode
+
+
+
+
+
+
+

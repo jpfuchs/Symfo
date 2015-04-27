@@ -1,0 +1,123 @@
+
+{% extends  "TroiswaBackBundle::layout.html.twig" %}
+
+{% block css %}
+{{ parent() }}
+{% endblock %}
+
+{% block titre %} acteur {{ parent() }}
+{% endblock %}
+
+
+{% block central %}
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Tous les films | {{ films |length }} dans la table
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="{{ path("troiswa_back_admin")  }}">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-table"></i> Films
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+
+
+
+            <a class="btn btn-success" href="{{ path("troiswa_back_create_film")  }}" >Creer un nouveau film</a>
+
+            {%  for message in app.session.flashbag.get("sucess_film") %}
+
+                <p class="alert alert-success">{{ message }}</p>
+
+            {% endfor %}
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-hover">
+
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Titre</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Date</th>
+                                <th>Note</th>
+                                <th>Genre</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+
+
+
+                            {% for unFilm in films %}
+
+
+                                <tr>
+                                <td> {{ unFilm.id }} </td>
+                                <td> {{ unFilm.Titre }} </td><td> {{ unFilm.description }} </td>
+                                    <td> <img src=" {{ asset("images/") }}{{ unFilm.image }}" width="'200px" class="img-thumbnail"> </td>
+
+                                    <!--<td> <img src="{" {#{{ asset(unActeur.displayImage) }} #}"> </td> -->
+
+
+                                </td>
+                                    <td> {{ unFilm.dateDeRealisation | date("m/d/Y") }} </td>
+
+                                    <td> {{ unFilm.note }} </td>
+
+                                    <td> {{ unFilm.laisonGenre.type }} </td>
+
+                                 <td>
+                                     <a class="btn btn-success" href="{{ path("troiswa_back_info_film",{"id":unFilm.id}) }}" >Voir</a>
+                                     <a class="btn btn-primary" href="{{ path("troiswa_back_modifier_film",{"id":unFilm.id}) }}" >Modifier</a>
+                                     <a class="btn btn-danger" href="" >Supprimer</a>
+                                 </td>
+
+
+                                </tr>
+
+                            {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+{% endblock %}
+
+
+
+    {% block javascript %}
+    {{ parent() }}
+
+
+    {% endblock %}

@@ -1,0 +1,87 @@
+
+{% extends  "TroiswaBackBundle::layout.html.twig" %}
+
+{% block css %}
+{{ parent() }}
+{% endblock %}
+
+{% block titre %} acteur {{ parent() }}
+{% endblock %}
+
+
+{% block central %}
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Creer les genres
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-table"></i> Genres
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+           <!--{# form(formGenre) #} -->
+
+            {{ form_start(formGenre) }}
+
+
+                {{  form_label(formGenre.type,"type") }}
+                {{ form_errors(formGenre.type) }}
+
+                <div class="has-success">
+                    {{ form_widget(formGenre.type, {"attr":{"class":"form-control" }} ) }}
+                </div>
+
+                {{  form_label(formGenre.description,"description") }}
+                {{ form_errors(formGenre.description) }}
+
+                <div class="has-success">
+                    {{ form_widget(formGenre.description, {"attr":{"class":"form-control" }} ) }}
+                </div>
+
+
+            {{ form_end(formGenre) }}
+            <!-- /.row -->
+
+
+            <a class="btn btn-success" href="{{ path("troiswa_back_create_genre")  }}" >Creer un nouveau genre</a>
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+
+
+
+                    </div>
+                </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+{% endblock %}
+
+
+
+    {% block javascript %}
+    {{ parent() }}
+
+
+    {% endblock %}
